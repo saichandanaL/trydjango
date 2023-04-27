@@ -8,4 +8,4 @@ def home_view(request ,*args, **kargs):
 def contact_view(request, *args, **kargs):
     print(args , kargs)
     print(request.user)
-    return HttpResponse(request, "about.html", {})
+    return render(request, "about.html", {})
