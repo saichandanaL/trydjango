@@ -8,4 +8,10 @@ def home_view(request ,*args, **kargs):
 def contact_view(request, *args, **kargs):
     print(args , kargs)
     print(request.user)
-    return render(request, "about.html", {})
+
+    send_context = {
+        "address" : "abc",
+        "phone" : "383897349",
+        "year" : [2020, 2021, 2022]
+    }
+    return render(request, "about.html", send_context)
