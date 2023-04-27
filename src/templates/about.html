@@ -3,6 +3,12 @@
 {% block content %}
 <h2>Contanct number : 100</h2>
 
+<ul>
+    {% for type in weather %}
+    <li>{{ type }}</li>
+    {% endfor %}
+</ul>
+
 <footer>
   <p>{{ address}}</p>
   <p>{{ phone}}</p>
