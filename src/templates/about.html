@@ -1,11 +1,12 @@
 {% extends "base.html" %} 
 
 {% block content %}
-<h2>Contanct number : 100 </h2>
-{% endblock content %} 
+<h2>Contanct number : 100</h2>
 
 <footer>
-    <p>{{ received_context.address}}</p>
-    <p>{{ received_context.phone}}</p>
-    <p>{{ received_context.year}}</p>
+  <p>{{ address}}</p>
+  <p>{{ phone}}</p>
+  <p>{{ year}}</p>
 </footer>
+
+{% endblock content %}
