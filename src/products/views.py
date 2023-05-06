@@ -52,3 +52,13 @@ def product_detail_view(request):
         "object" : obj
     }
     return render(request, "products/product_detail.html", context_obj)
+
+def dynamic_detail_view(request, dynamic_id):
+    obj = Product.objects.get(id = dynamic_id)
+
+    context_obj = {
+        "object" : obj
+    }
+
+    return render(request, "products/product_detail.html", context_obj)
+
