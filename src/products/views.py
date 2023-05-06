@@ -8,14 +8,14 @@ from .forms import ProductForm, RawProductForm
 # obj = Product.objects.get(id = 1)
 
 # for creating forms
-def product_create_view(request):
-    my_form = RawProductForm(request.POST)
+# def product_create_view(request):
+#     my_form = RawProductForm(request.POST)
     
-    context_obj = {
-            "form" : my_form
-        }
+#     context_obj = {
+#             "form" : my_form
+#         }
 
-    return render(request, "products/product_create.html", context_obj)
+#     return render(request, "products/product_create.html", context_obj)
 
 # for raw html
 # def product_create_view(request):
@@ -29,16 +29,16 @@ def product_create_view(request):
 
 #     return render(request, "products/product_create.html", context_obj)
 
-# def product_create_view(request):
-#     form = ProductForm(request.POST or None)
-#     if form.is_valid():
-#         form.save()
-#         form = ProductForm()
+def product_create_view(request):
+    form = ProductForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form = ProductForm()
 
-#     context_obj = {
-#         "form" : form
-#     }
-#     return render(request, "products/product_create.html", context_obj)
+    context_obj = {
+        "form" : form
+    }
+    return render(request, "products/product_create.html", context_obj)
 
 def product_detail_view(request):
     obj = Product.objects.get( id = 1 )
