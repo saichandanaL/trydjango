@@ -9,11 +9,11 @@ from .forms import ProductForm, RawProductForm
 
 # for creating forms
 def product_create_view(request):
-    my_form = RawProductForm()
+    my_form = RawProductForm(request.POST)
     
     context_obj = {
-        "form" : my_form
-    }
+            "form" : my_form
+        }
 
     return render(request, "products/product_create.html", context_obj)
 
